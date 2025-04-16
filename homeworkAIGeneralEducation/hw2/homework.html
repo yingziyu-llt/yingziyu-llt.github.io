@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《红楼梦》人物关系图</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #d44d5c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* 主体布局 */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 关系图容器 */
+        #chart-container {
+            width: 100%;
+            height: 600px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        /* 说明部分样式 */
+        .description {
+            max-width: 800px;
+            margin-top: 30px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .description h2 {
+            color: #d44d5c;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .description p {
+            font-size: 1em;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            #chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部 -->
+    <header>
+        <h1>《红楼梦》人物关系图</h1>
+        <p>通过可视化关系图展示《红楼梦》中主要人物的共现关系</p>
+    </header>
+
+    <!-- 主体 -->
+    <main>
+        <!-- 关系图容器 -->
+        <div id="chart-container">
+            <!-- 嵌入 pyecharts 生成的关系图 -->
+            <iframe src="./raw.html" 
+                    style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+
+        <!-- 说明部分 -->
+        <div class="description">
+            <h2>关于本关系图</h2>
+            <p>本关系图基于《红楼梦》文本数据生成，展示了书中主要人物之间的共现关系。节点的大小表示人物在书中的出现次数。</p>
+            <p>本图未对人物进行分类，旨在以更直观的方式展示所有主要人物的整体关系网络。你可以通过拖拽节点或缩放图表来探索人物之间的联系。</p>
+        </div>
+
+        <div id="chart-container">
+            <!-- 嵌入 pyecharts 生成的关系图 -->
+            <iframe src="./cate.html" 
+                    style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+
+        <!-- 说明部分 -->
+        <div class="description">
+            <h2>关于本关系图</h2>
+            <p>人物被分为以下几类：</p>
+            <ul>
+                <li><strong>贾府</strong>：贾宝玉、贾母、贾政等贾府核心成员。</li>
+                <li><strong>王家</strong>：王熙凤、王夫人等王家成员。</li>
+                <li><strong>史家</strong>：史湘云等史家成员。</li>
+                <li><strong>薛家</strong>：薛宝钗、薛姨妈等薛家成员。</li>
+                <li><strong>仆人</strong>：丫鬟和仆人，如平儿、紫鹃等。</li>
+                <li><strong>其他</strong>：不属于上述类别的其他角色。</li>
+            </ul>
+            <p>你可以通过拖拽节点或缩放图表来探索人物之间的关系。</p>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer style="text-align: center; padding: 10px; background-color: #d44d5c; color: white;">
+        <p>&copy; 2025 《红楼梦》人物关系图 | 设计者：林乐天</p>
+    </footer>
+
+</body>
+</html>
